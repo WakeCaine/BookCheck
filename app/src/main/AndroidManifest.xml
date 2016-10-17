@@ -1,20 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.example.shakecaine.documentationtraining"
+<manifest package="com.example.shakecaine.bookcheck"
           xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-feature
         android:name="android.hardware.camera"
         android:required="true"/>
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_books"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
+        <!--<activity
             android:name=".FirstActivity"
             android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>-->
+
+        <activity
+            android:name=".StartActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTop"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -22,26 +37,53 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
         <activity
-            android:name=".DisplayMessageActivity"
+            android:name="com.example.shakecaine.training.DisplayMessageActivity"
+            android:configChanges="keyboardHidden|orientation"
             android:label="@string/title_activity_display_message"
-            android:parentActivityName=".FirstActivity"
+            android:parentActivityName="com.example.shakecaine.bookcheck.FirstActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.shakecaine.documentationtraining.FirstActivity"/>
+                android:value="com.example.shakecaine.bookcheck.FirstActivity"/>
+        </activity>
+
+        <activity
+            android:name=".FirstActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".StartActivity"/>
         </activity>
         <activity
-            android:name=".SImpleAndroidOCRActivity"
-            android:label="@string/title_activity_simple_android_ocr"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:name=".main.DetailActivity"
+            android:label="@string/activity_details"
+            android:parentActivityName=".main.BookActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".main.BookActivity"/>
         </activity>
-        <!-- ATTENTION: This was auto-generated to add Google Play services to your project for
-             App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
+        <activity
+            android:name=".main.BookActivity"
+            android:label="">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".StartActivity"/>
+        </activity>
+        <activity android:name=".main.FavListActivity"
+                  android:label="">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".StartActivity"/>
+        </activity>
+
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version"/>
+
     </application>
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 </manifest>

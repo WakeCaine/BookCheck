@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".main.DetailActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textTitle"
+            android:maxWidth="200dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            android:text="TitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitlev"/>
+
+        <TextView
+            android:id="@+id/authorText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Author"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/textTitle"
+            android:layout_alignLeft="@+id/textTitle"
+            android:layout_alignStart="@+id/textTitle"/>
+
+        <TextView
+            android:id="@+id/priceText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="N/A"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_alignBottom="@+id/img_cover"
+            android:layout_alignEnd="@+id/authorText"
+            android:layout_alignRight="@+id/authorText"
+            android:layout_alignLeft="@+id/authorText"
+            android:layout_alignStart="@+id/authorText"/>
+
+        <ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:maxWidth="150dp"
+                   android:minWidth="50dp"
+                   android:minHeight="50dp"
+                   android:maxHeight="250dp"
+                   android:adjustViewBounds="true"
+                   android:layout_alignParentRight="true"
+                   android:id="@+id/img_cover"
+                   android:src="@drawable/img_books_large"
+                   android:layout_marginTop="10dp"
+                   android:layout_marginLeft="20dp"
+                   android:layout_marginRight="10dp"
+                   android:scaleType="centerCrop"
+                   android:layout_alignRight="@+id/textTitle"/>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Buy"
+        android:id="@+id/buy_button"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="15dp"
+        />
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/commentList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginTop="20dp"/>
+</LinearLayout>

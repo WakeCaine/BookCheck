@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:useDefaultMargins="true"
+            android:alignmentMode="alignBounds"
+            android:columnCount="3"
+            android:rowCount="2">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@android:color/holo_blue_light" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_row="1"
+        android:layout_column="0">
+        <TextView
+            android:id="@+id/commentText"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:maxWidth="200dp"
+            android:adjustViewBounds="true"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:text="Placeholder Text for seeeing how things work. Placeholder Text for seeeing how things work."
+            android:layout_alignTop="@+id/img_thumbnail"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/starOn"
+            android:src="@android:drawable/btn_star_big_on"
+            android:layout_marginTop="11dp"
+            android:layout_centerVertical="true"
+            android:layout_alignRight="@+id/text_title"
+            android:layout_alignEnd="@+id/text_title"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ratingText"
+            android:text="4/5"
+            android:textStyle="bold"
+            android:textSize="@dimen/activity_vertical_margin"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_centerVertical="true"
+            android:layout_alignRight="@+id/starOn"
+            android:layout_alignEnd="@+id/starOn"/>
+    </LinearLayout>
+</GridLayout>
